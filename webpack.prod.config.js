@@ -6,7 +6,7 @@ cfg.target = 'web'
 
 cfg.entry = {
   ...cfg.entry,
-  'mp-kat-scraper.min': ['babel-polyfill', './src']
+  'mp-kat-scraper.min': ['./src']
 }
 
 cfg.plugins = [

@@ -2,7 +2,7 @@ import webpack from 'webpack'
 
 export default {
   entry: {
-    'mp-kat-scraper': ['babel-polyfill', './src']
+    'mp-kat-scraper': ['./src']
   },
   output: {
     path: 'lib',
@@ -27,7 +27,13 @@ export default {
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'stage-0'],
-          plugins: ['transform-class-properties']
+          plugins: [
+            'transform-class-properties',
+            ['transform-runtime', {
+              polyfill: false,
+              regenerator: true
+            }]
+          ]
         }
       }
     ],
